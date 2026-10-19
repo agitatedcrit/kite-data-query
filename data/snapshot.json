@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "dataset_version": "kite-blocks-742e3b4a9258f767",
+  "as_of": "2026-10-19T01:51:09.146Z",
+  "rows_hash": "742e3b4a9258f767eda73af6194a00d083664e916397a8e8d8a35366261c8951",
+  "source": {
+    "network": "eip155:2368",
+    "rpc_url": "https://rpc-testnet.gokite.ai/",
+    "method": "eth_getBlockByNumber",
+    "kind": "operator_observed_public_chain_facts"
+  },
+  "rights": {
+    "approved": true,
+    "license": "CC0-1.0",
+    "summary": "Operator dedicates this independently collected factual block-metadata selection to CC0. No private or third-party proprietary dataset is redistributed."
+  },
+  "rows": [
+    {
+      "number": "22042459",
+      "hash": "0xc733ee04be9c3c63b578995acdd8387cfde6ee7aa989cf8382bfc36661ea3572",
+      "timestamp": 1792372081,
+      "gas_used": "35989",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042458",
+      "hash": "0x117608ce194f637f9d051147a97d7bd204470f59898d64c449a8e7cd03c1b9f6",
+      "timestamp": 1792357522,
+      "gas_used": "34228",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042457",
+      "hash": "0x3f6b94d9bc30f9959d70cbae77bb597ce65b7275ef51e298ffd2a738679aa6ae",
+      "timestamp": 1792357515,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042456",
+      "hash": "0xeb94ab2d676cf69bf62c62597e2f00c57588363792c24d6ffce71aa0ae4007f3",
+      "timestamp": 1792357488,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042455",
+      "hash": "0x5b8b7d80cb9c26a3fbfb62513a1ac2e31128184cf772bf490c6f25d16ec75e57",
+      "timestamp": 1792354540,
+      "gas_used": "66688",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042454",
+      "hash": "0xf31863ad690dec76b3a41acf518193226d304a6edf8f37255a35e6a203946c01",
+      "timestamp": 1792354519,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042453",
+      "hash": "0x135a47fcc225f6cfe43b1aca29294dc831bbfe23a79ba4b7ca040fd741f6461a",
+      "timestamp": 1792337318,
+      "gas_used": "40465",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042452",
+      "hash": "0x0d8a36d93ff4db1abc3aa58477329693b5a08a9abd38f114f0eec1c87cd2e465",
+      "timestamp": 1792337085,
+      "gas_used": "40465",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042451",
+      "hash": "0xf658c909d6ccade639b3afa34c0708533c378defe36caa4471abb4d17cbea4cc",
+      "timestamp": 1792332692,
+      "gas_used": "35989",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042450",
+      "hash": "0x540d9c69aaa6dd6478d9101637d1f8ec64391df91199dc222b9c848cba986801",
+      "timestamp": 1792330913,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042449",
+      "hash": "0xbbe38136801d91d50e61dcdaf7d59ac39e42c5d8a3858ce9385a145d09421700",
+      "timestamp": 1792326609,
+      "gas_used": "34228",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042448",
+      "hash": "0x8e9e7fc6474b48272f2e6c08c013a5dd9461e469710b894cbe0fb6736b9223cd",
+      "timestamp": 1792326596,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042447",
+      "hash": "0xe49a51ea925ebe3cdcbc1c1b8ce72b8b3768d9e9d43d7238b4be0c9bc80c6f4e",
+      "timestamp": 1792325327,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042446",
+      "hash": "0x6250e68cfdfcab718258c9d3d61385415b1a699c19b3d8e60a0da627e7a6bfab",
+      "timestamp": 1792319166,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042445",
+      "hash": "0x06523fd121595f0187c9c7a8e5fa4856b77d85e6e6ad4f3f75919ea55e0c2220",
+      "timestamp": 1792315215,
+      "gas_used": "35989",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042444",
+      "hash": "0xc41880ce7fff3a1bbb644cdb99f994a3e2ab4916b9dfbb959f6a04360d3990a2",
+      "timestamp": 1792312065,
+      "gas_used": "35989",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042443",
+      "hash": "0x5a15d8e8d1f802ba0cc854d8c41ace11a0d6ad8b7c3fad6d5c486dba07d65a76",
+      "timestamp": 1792311661,
+      "gas_used": "81247",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042442",
+      "hash": "0xd2149454c03332e819352ba2e4290762e11c126dd19406bf487a3e3ed059064b",
+      "timestamp": 1792311630,
+      "gas_used": "35989",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042441",
+      "hash": "0x83ab4b9580ff8961b458a922ff908e0792a964e3bfc9e870d289143b2558ed8b",
+      "timestamp": 1792310552,
+      "gas_used": "21000",
+      "transaction_count": 1
+    },
+    {
+      "number": "22042440",
+      "hash": "0x86d1e382aaa69617c022e544231e0d70f2b5b0f5cfe9993c9ddf4f0363c2ebeb",
+      "timestamp": 1792309925,
+      "gas_used": "81247",
+      "transaction_count": 1
+    }
+  ]
+}

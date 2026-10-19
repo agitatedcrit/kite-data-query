@@ -1,0 +1,39 @@
+schema: 1
+name: kite-data-query
+display_name: Data Query
+description: Versioned parameterized queries over operator-owned licensed
+  snapshots. Evaluation draft; actual payment/deployment verification is
+  pending.
+maintainer:
+  github: agitatedcrit
+status: draft
+network: eip155:2368
+pay_to: "0x0000000000000000000000000000000000000000"
+source: custom
+upstream:
+  name: Data Query
+  url: https://github.com/agitatedcrit/kite-data-query
+  requires_api_key: false
+endpoints:
+  - method: POST
+    path: /v1/data/query
+    summary: Versioned parameterized queries over operator-owned licensed snapshots
+    price_usd: "0.01"
+    example_request:
+      body:
+        operation_id: sample-operation
+        dataset_version: kite-blocks-742e3b4a9258f767
+        query_type: recent_blocks
+        filters: {}
+        limit: 5
+    pitfalls:
+      - "Draft only: configure a real receiver, asset and public origin before
+        deployment."
+      - Use an approved original Passport session; unknown settlement is not
+        permission to repurchase.
+categories:
+  - data
+tags:
+  - kite
+  - x402
+  - agent-services
