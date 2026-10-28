@@ -22,7 +22,7 @@ endpoints:
     example_request:
       body:
         operation_id: sample-operation
-        dataset_version: kite-blocks-742e3b4a9258f767
+        dataset_version: kite-blocks-746910411b4030cd
         query_type: recent_blocks
         filters: {}
         limit: 5

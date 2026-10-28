@@ -1,10 +1,23 @@
 {
-  "observed_at": "2026-10-19T01:57:09.027Z",
+  "observed_at": "2026-10-28T12:45:35.290Z",
+  "version": "0.2.0",
   "project": "kite-data-query",
   "status": "PASS",
-  "test_cases": 14,
+  "node_runtime": "v24.22.1",
+  "test_cases": null,
   "dotnet_assertions": null,
   "evidence_level": "E1",
-  "scope": "Local contracts; nine shared seller tests are repeated in five consumer repositories",
-  "live_payment_performed": false
+  "actual_spend": false,
+  "log_sha256": "08b2a43f025f724a94d1297d40b2a0290e691d17779c71fe920d96004ada1e91",
+  "http": {
+    "project": "kite-data-query",
+    "status": "PASS",
+    "checks": [
+      "real HTTP unpaid preflight",
+      "x402 v2 terms"
+    ],
+    "evidence_level": "E1",
+    "configured_assets": "synthetic local QA addresses; not verified assets"
+  },
+  "scope": "Current local unit/contract tests; shared seller tests are counted per consuming repository. No funded Passport execution."
 }

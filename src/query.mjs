@@ -38,7 +38,10 @@ export class Queries {
   precheck(input) {
     const s = this.snapshot;
     if (!s.rights.approved) throw fault("source_permission_revoked", 503);
-    if (this.now() - Date.parse(s.as_of) > this.maxAgeMs)
+    if (
+      Date.parse(s.as_of) - this.now() > 60000 ||
+      this.now() - Date.parse(s.as_of) > this.maxAgeMs
+    )
       throw fault("dataset_stale", 503);
     if (input.dataset_version !== s.dataset_version)
       throw fault("dataset_version_mismatch", 409);
@@ -119,7 +122,8 @@ export async function capture({
   count = 20,
   fetcher = fetch,
 } = {}) {
-  if (count < 1 || count > 100) throw fault("capture_limit");
+  if (!Number.isInteger(count) || count < 1 || count > 100)
+    throw fault("capture_limit");
   const rpc = async (method, params = []) => {
     const r = await fetcher(rpcUrl, {
       method: "POST",
@@ -138,23 +142,35 @@ export async function capture({
     throw fault("source_chain_mismatch", 503);
   const head = BigInt(await rpc("eth_blockNumber")),
     rows = [];
-  for (let i = 0; i < count; i++) {
+  const captureBlock = async (i) => {
     const block = await rpc("eth_getBlockByNumber", [
       "0x" + (head - BigInt(i)).toString(16),
       false,
     ]);
     if (!block) throw fault("source_missing_block", 503);
-    rows.push({
+    return {
       number: BigInt(block.number).toString(),
       hash: block.hash,
       timestamp: Number(BigInt(block.timestamp)),
       gas_used: BigInt(block.gasUsed).toString(),
       transaction_count: block.transactions.length,
-    });
+      parent_hash: block.parentHash,
+    };
+  };
+  for (let i = 0; i < count; i += 4) {
+    rows.push(
+      ...(await Promise.all(
+        Array.from({ length: Math.min(4, count - i) }, (_, j) =>
+          captureBlock(i + j),
+        ),
+      )),
+    );
   }
   for (let i = 0; i < rows.length - 1; i++)
     if (BigInt(rows[i].number) - 1n !== BigInt(rows[i + 1].number))
       throw fault("snapshot_gap", 503);
+    else if (rows[i].parent_hash && rows[i].parent_hash !== rows[i + 1].hash)
+      throw fault("snapshot_reorg", 503);
   const rows_hash = hash(rows);
   return validateSnapshot({
     schema_version: 1,
@@ -166,6 +182,7 @@ export async function capture({
       rpc_url: rpcUrl,
       method: "eth_getBlockByNumber",
       kind: "operator_observed_public_chain_facts",
+      head_block: head.toString(),
     },
     rights: {
       approved: true,
